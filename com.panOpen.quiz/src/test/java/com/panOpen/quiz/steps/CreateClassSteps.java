@@ -25,6 +25,7 @@ public class CreateClassSteps {
 		
 	}
 
+	@Step
 	public void FillFormClass(List<List<String>> data, int id) {
 		
 		//a.Ingresar Class Name.
@@ -57,8 +58,15 @@ public class CreateClassSteps {
 		myClassPage.setEndDate(data.get(id).get(2).trim());
 		System.out.println(" c.Ingresar End Date.");
 
-		//g.Clic botón Save Class.
+
+		
+	}
+
+	@Step
+	public void saveClass() {
+		//a.Clic botón Save Class.
 		myClassPage.clicBtnSaveClass();
+		System.out.println(" a.Clic botón Save Class.");
 		
 		myClassPage.esperar(15);
 		

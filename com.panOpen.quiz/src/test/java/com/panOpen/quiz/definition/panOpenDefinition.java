@@ -3,6 +3,7 @@ package com.panOpen.quiz.definition;
 import java.util.List;
 
 import com.panOpen.quiz.steps.CreateClassSteps;
+import com.panOpen.quiz.steps.DueDateForAssessmentsSteps;
 import com.panOpen.quiz.steps.LoginSteps;
 
 import cucumber.api.DataTable;
@@ -19,10 +20,14 @@ public class panOpenDefinition {
 	@Steps
 	CreateClassSteps createClassSteps;
 	
-	@Given("^User logs in as faculty with email \"([^\"]*)\" and pass \"([^\"]*)\"$")
-	public void user_logs_in_as_faculty_with_email_and_pass(String email, String pass)  {
+	@Steps
+	DueDateForAssessmentsSteps dueDateForAssessmentsSteps; 
+	
+	
+	@Given("^User logs in \"([^\"]*)\" with email \"([^\"]*)\" and pass \"([^\"]*)\"$")
+	public void user_logs_in_with_email_and_pass(String type, String email, String pass) throws Throwable {
 		System.out.println("");
-		System.out.println("1.User logs in as faculty:");
+		System.out.println("1.User logs in " + type + ":");
 		loginSteps.loginPanOpen(email,pass);
 	}
 
@@ -48,7 +53,23 @@ public class panOpenDefinition {
 	public void class_should_be_properly_saved()  {
 		System.out.println("");
 		System.out.println("4.Class should be properly saved:");
-		//simulacionCanonFinancieroSteps.verificar_mensajes_de_error();
+		createClassSteps.saveClass();
+	}
+	
+	@When("^Set due date for assessments$")
+	public void set_due_date_for_assessments(DataTable dtDatosForm) {
+		
+		List<List<String>> data = dtDatosForm.raw();
+		for (int i = 0; i < data.size(); i++) {
+			System.out.println("");
+			System.out.println("2.Set due date for assessments:");
+			dueDateForAssessmentsSteps.SetDueDate(data,i);
+		}
+	}
+
+	@Then("^User logs out$")
+	public void user_logs_out() {
+
 	}
 	
 	

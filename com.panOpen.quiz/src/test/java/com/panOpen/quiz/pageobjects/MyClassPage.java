@@ -14,9 +14,6 @@ public class MyClassPage extends PageObject{
 	@FindBy(xpath = "//*[text()='Create New Class']")   
 	private WebElementFacade btnCreateNewClass;
 
-	// Link iFrame
-	@FindBy(xpath = "//A[@href='/iframe']")
-	private WebElementFacade lnkIframe;
 	
 	// Campo Class Name
 	@FindBy(xpath="//*[@id='class-name']")
