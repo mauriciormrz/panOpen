@@ -1,5 +1,10 @@
 package com.panOpen.quiz.pageobjects;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebElement;
+
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -16,7 +21,7 @@ public class MyClassPage extends PageObject{
 
 	
 	// Campo Class Name
-	@FindBy(xpath="//*[@id='class-name']")
+	@FindBy(id="class-name")
 	private WebElementFacade txtClassName;
 	
 	
@@ -57,7 +62,7 @@ public class MyClassPage extends PageObject{
 	private WebElementFacade btnSU;
 	
 	// Campo Start Time
-	@FindBy(xpath="//*[@id='start-time']")
+	@FindBy(id="start-time")
 	private WebElementFacade txtStartTime;
 	
 	// Campo End Time
@@ -67,6 +72,10 @@ public class MyClassPage extends PageObject{
 	// Botón Save Class
 	@FindBy(xpath="//*[@id='toc_options_toggle']")
 	private WebElementFacade btnSaveClass;
+	
+	// Botón Cancel Changes
+	private WebElement btnCancelChanges;
+	
 	
 		
 	public void clickLnkMyClasses() {
@@ -85,14 +94,11 @@ public class MyClassPage extends PageObject{
 	}
 	
 	public void setStartDate(String strStartDate) {
-		//txtStartDate.click();
-		//txtStartDate.clear();
 		txtStartDate.typeAndEnter(strStartDate);
+
 	}
 	
 	public void setEndDate(String strEndDate) {
-		//txtEndDate.click();
-		//txtEndDate.clear();
 		txtEndDate.typeAndEnter(strEndDate);
 	}
 	
@@ -153,13 +159,9 @@ public class MyClassPage extends PageObject{
 	public void clicBtnSaveClass() {
 		btnSaveClass.click();
 	}
-
-	public void esperar(int segundos) {
-
-		try {
-			Thread.sleep(segundos * 1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+	
+	public  void clickBtnCancelChanges(String strClassName) {
+		btnCancelChanges=getDriver().findElement(By.xpath("//*[text()='" + strClassName +"']"));
+		btnCancelChanges.click();
 	}
 }

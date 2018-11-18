@@ -24,7 +24,6 @@ public class DueDateForAssessmentsPage extends PageObject{
 	public  void clickClassName(String strClassName) {
 		lnkClassName=getDriver().findElement(By.xpath("//*[text()='" + strClassName +"']"));
 		lnkClassName.click();
-		
 	}
 	
 	public void clickTabBookAnalytics() {

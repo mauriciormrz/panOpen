@@ -53,7 +53,8 @@ public class panOpenDefinition {
 	public void class_should_be_properly_saved()  {
 		System.out.println("");
 		System.out.println("4.Class should be properly saved:");
-		createClassSteps.saveClass();
+		//createClassSteps.saveClass();
+		createClassSteps.cancelChanges();
 	}
 	
 	@When("^Set due date for assessments$")
