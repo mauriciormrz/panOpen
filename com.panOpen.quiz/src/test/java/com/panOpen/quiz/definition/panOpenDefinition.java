@@ -12,6 +12,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
+
 public class panOpenDefinition {
 	
 	@Steps
@@ -70,6 +71,9 @@ public class panOpenDefinition {
 
 	@Then("^User logs out$")
 	public void user_logs_out() {
+		//System.out.println("");
+		//System.out.println("User logs out ");
+		//loginSteps.logoutPanOpen();
 
 	}
 	

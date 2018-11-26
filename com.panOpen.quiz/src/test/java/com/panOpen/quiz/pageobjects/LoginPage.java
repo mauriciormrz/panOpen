@@ -6,6 +6,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
 
+
 @DefaultUrl("https://automation.panopen.org/sign_in")
 public class LoginPage extends PageObject{
 	
@@ -18,8 +19,12 @@ public class LoginPage extends PageObject{
 	private WebElementFacade txtPassword;
 	
 	// Botón Sign In
-	@FindBy(xpath="//*[@id='new_user']/div/div[5]/input")
+	@FindBy(name="commit")
 	private WebElementFacade btnSignIn;
+	
+	// Botón Sign Out
+	@FindBy(xpath="//*[@id='menu-v2']/div[1]/ul[2]/li[3]/a/i")
+	private WebElementFacade btnSignOut;
 	
 	
 	public void setTxtEmailAddress(String strUsuario) {
@@ -33,5 +38,14 @@ public class LoginPage extends PageObject{
 	public void clickBtnSignIn() {
 		btnSignIn.click();
 	}
+
+	public void clickBtnSignOut() {
+		btnSignOut.click();
+		getDriver().switchTo().alert().accept();
+		getDriver().close();
+		
+	}
+	
+
 	
 }

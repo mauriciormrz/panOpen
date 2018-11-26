@@ -1,6 +1,6 @@
-package utilities;
+package com.panOpen.utilities;
 
-public class utils {
+public class utilities {
 	
 	public static void esperar(int segundos) {
 

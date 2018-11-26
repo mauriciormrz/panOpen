@@ -2,12 +2,12 @@ package com.panOpen.quiz.steps;
 
 //import com.panOpen.quiz.pageobjects.LoginPage;
 import com.panOpen.quiz.pageobjects.MyClassPage;
-
+import com.panOpen.utilities.utilities;
 
 import java.util.List;
 
 import net.thucydides.core.annotations.Step;
-import utilities.utils;
+
 
 public class CreateClassSteps {
 	
@@ -36,12 +36,12 @@ public class CreateClassSteps {
 		//b.Ingresar Start Date.
 		myClassPage.setStartDate(data.get(id).get(1).trim());
 		System.out.println(" b.Ingresar Start Date.");
-		utils.esperar(1);
+		utilities.esperar(1);
 		
 		//c.Ingresar End Date.
 		myClassPage.setEndDate(data.get(id).get(2).trim());
 		System.out.println(" c.Ingresar End Date.");
-		utils.esperar(1);
+		utilities.esperar(1);
 		
 		//d.Seleccionar Meeting Days.
 		myClassPage.setBtnM(Integer.parseInt(data.get(id).get(3).trim()));	
@@ -56,12 +56,12 @@ public class CreateClassSteps {
 		//e.Ingresar Start Time.
 		myClassPage.setStartTime(data.get(id).get(10).trim());
 		System.out.println(" e.Ingresar Start Time.");
-		utils.esperar(1);
+		//utilities.esperar(1);
 		
 		//f.Ingresar End Time.
 		myClassPage.setEndTime(data.get(id).get(11).trim());
 		System.out.println(" f.Ingresar End Time.");
-		utils.esperar(1);
+		//utilities.esperar(1);
 		
 	}
 
@@ -71,7 +71,7 @@ public class CreateClassSteps {
 		myClassPage.clicBtnSaveClass();
 		System.out.println(" a.Clic botón Save Class.");
 		
-		utils.esperar(5);
+		//utilities.esperar(5);
 		
 	}
 	
@@ -81,7 +81,7 @@ public class CreateClassSteps {
 		myClassPage.clickBtnCancelChanges("Cancel Changes");
 		System.out.println(" b.Clic botón Cancel Changes.");
 		
-		utils.esperar(5);
+		//utilities.esperar(5);
 		
 	}
 }

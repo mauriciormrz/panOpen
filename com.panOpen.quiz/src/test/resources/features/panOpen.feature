@@ -1,4 +1,5 @@
 #Author: ramirezmauricio@hotmail.com
+#https://github.com/panOpen-team/automation-assignment/invitations
 
 #old_faculty_email: automation+1@panopen.com
 #old_faculty_password: 123123123
@@ -33,12 +34,12 @@ Feature: Quiz panOpen
 	Scenario Outline: Due Date for assessments
 	  Given User logs in "as faculty" with email "automation@panopen.com" and pass "123123123"
 	  When Set due date for assessments
-	  | <Class Name> | <Item> | <Activity> | <Due month> | <Due day> |  <Due year> | <Due hour> | <Due minute> | <am-pm> |
+	  | <Class Name> | <Assessment> | <Activity> | <Due month> | <Due day> |  <Due year> | <Due hour> | <Due minute> | <am-pm> |
 	  Then User logs out
 	  
 	      Examples: 
-	    | Class Name                | Item       | Activity    | Due month | Due day |  Due year | Due hour | Due minute | am-pm |
-	    | Active Class for testing  | Chapter 01 | rich text 1 | 11        | 25      | 2019      | 7        |  00        | am    |
+	    | Class Name                | Assessment                           | Activity    | Due month | Due day |  Due year | Due hour | Due minute | am-pm |
+	    | Active Class for testing  | Chapter 01 - Introduction to Biology | rich text 1 | 11        | 25      | 2019      | 7        |  00        | am    |
       
 
 

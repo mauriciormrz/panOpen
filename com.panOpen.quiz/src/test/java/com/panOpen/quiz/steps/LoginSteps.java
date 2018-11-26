@@ -28,5 +28,10 @@ public class LoginSteps {
 
 	}
 	
+	@Step
+	public void logoutPanOpen() {
+		loginPage.clickBtnSignOut();
+	}
+	
 
 }

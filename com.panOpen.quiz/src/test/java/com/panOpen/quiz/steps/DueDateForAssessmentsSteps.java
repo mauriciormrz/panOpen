@@ -22,11 +22,19 @@ public class DueDateForAssessmentsSteps {
 		dueDateForAssessmentsPage.clickTabBookAnalytics();
 		System.out.println(" b.Clic en Book Analytics tab.");
 		
-		//c.Expandir evaluacion.
-		dueDateForAssessmentsPage.clickLnkItem(data.get(id).get(1).trim());
-		System.out.println(" c.Expandir evaluacion.");
+		//c.Clic Assessment.
+		dueDateForAssessmentsPage.clickLnkAssessment(data.get(id).get(1).trim());
+		System.out.println(" c.Clic Assesment.");
 		
-		//d.Clic en Set Due Date de la Activity.
+		//d.Check box Activity.
+
+		dueDateForAssessmentsPage.chkBoxActivity(data.get(id).get(2).trim());
+		System.out.println(" d.Check box Activity.");
+		
+		//e.Clic botón Set Due Date	
+		dueDateForAssessmentsPage.clicBtnSetDueDate();
+		System.out.println(" e.Clic botón Set Due Date");
+
 		//e.Ingresar Fecha y Hora.
 		//f.Clic en Save.
 	
